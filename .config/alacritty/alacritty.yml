@@ -1,0 +1,109 @@
+env:
+    TERM: xterm-256color
+
+scrolling:
+    history: 5000
+
+window:
+ padding:
+    x: 3
+    y: 10
+
+colors:
+  # Default colors
+  primary:
+    #background: '#000000'
+    background: '#1C1E26'
+    foreground: '0xf8f8f2'
+
+  cursor:
+    text: '0x44475a'
+    cursor: '0xf8f8f2'
+
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area. If selection
+  # background is unset, selection color will be the inverse of the cell colors.
+  # If only text is unset the cell text color will remain the same.
+  selection:
+    text: '0xf8f8f2'
+    background: '0x44475a'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xbd93f9'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xbfbfbf'
+
+  # Bright colors
+  bright:
+    black:   '0x4d4d4d'
+    red:     '0xff6e67'
+    green:   '0x5af78e'
+    yellow:  '0xf4f99d'
+    blue:    '0xcaa9fa'
+    magenta: '0xff92d0'
+    cyan:    '0x9aedfe'
+    white:   '0xe6e6e6'
+
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  dim:
+    black:   '0x14151b'
+    red:     '0xff2222'
+    green:   '0x1ef956'
+    yellow:  '0xebf85b'
+    blue:    '0x4d5b86'
+    magenta: '0xff46b0'
+    cyan:    '0x59dffc'
+    white:   '0xe6e6d1'
+
+  # Indexed Colors
+  #
+  # The indexed colors include all colors from 16 to 256.
+  # When these are not set, they're filled with sensible defaults.
+  #
+  # Example:
+  #   `- { index: 16, color: '0xff00ff' }`
+  #
+  indexed_colors: []
+
+font:
+  normal:
+    family: comic mono
+    style: Regular
+
+  bold:
+    family: comic mono
+    style: Bold
+
+  italic:
+    family: comic mono
+    style: Italic
+
+  bold_italic:
+    family: comic mono
+    style: Bold Italic
+  size: 12
+background_opacity: 0.97
+# Key bindings
+Key_bindings:
+    - { key: Equals,   mods: Super, action: IncreaseFontSize }
+    - { key: Subtract, mods: Super, action: DecreaseFontSize }
+    - { key: Key0,     mods: Super, action: ResetFontSize    }
+    - { key: PageUp,   mods: Shift,   action: ScrollPageUp   }
+    - { key: PageDown, mods: Shift,   action: ScrollPageDown }
+    - { key: End,      mods: Shift,   action: ScrollToBottom }
+    - { key: Home,     mods: Shift,   action: ScrollToTop    }
+    - { key: V,        mods: Control|Alt,  action: Paste       }
+    - { key: C,        mods: Control|Alt,  action: Copy        }
+    - { key: Return,   mods: Control, action: SpawnNewInstance }
+    - { key: T,        mods: Control, action: SpawnNewInstance }
+

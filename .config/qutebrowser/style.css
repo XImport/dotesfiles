@@ -1,0 +1,12 @@
+/* Change color of normal tabs */
+
+tab:not([selected="true"]) { background-color: #242424 !important;
+
+color: #70aaec !important;}
+
+
+/* Tab: selected colors */
+
+#tabbrowser-tabs .tabbrowser-tab[selected] .tab-content { background: #242424 !important;
+
+color: #70aaec !important;}

@@ -1,0 +1,27 @@
+background yes
+use_xft yes
+xftfont lime
+xftalpha 6
+update_interval .2
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_type override
+double_buffer yes
+draw_shades no
+draw_outline no
+stippled_borders no
+border_margin 0
+border_width 1
+default_color black
+default_shade_color white
+alignment bottom_right
+maximum_size 1262
+gap_x 12
+gap_y 12
+use_spacer no
+no_buffers yes
+uppercase yes
+/*#${color #ffffff}${audacious_status}${color #387d94} | */
+TEXT
+${alignr}${color #ffffff}cpu:${cpubar cpu1 7, 16}${color #387d94} | ${color #ffffff}down:${downspeedgraph eth0 7, 16}${color #387d94} | ${color #ffffff}up:${upspeedgraph eth0 7, 16}${color #387d94} | ${color #ffffff}${time %a %d %b %y}${color #387d94} |${color #ffffff} ${time %l:%M %P} 
