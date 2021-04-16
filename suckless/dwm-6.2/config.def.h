@@ -6,6 +6,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
+static const char buttonbar[]       = " ";
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -58,6 +59,7 @@ static const Rule rules[] = {
 	{ "Nitrogen",  			NULL,       NULL,       1 << 7,       1,           -1 },
 	{ "Lxappearance",  		NULL,       NULL,       1 << 7,       1,           -1 },
 	{ "Nvidia-settings",  	NULL,       NULL,       1 << 7,       1,           -1 },
+	{ "SimpleScreenRecorder",NULL,       NULL,      1 << 5,       1,           -1 },
 	{ "discord",  	    	NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "qutebrowser",  		NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Pcmanfm",  			NULL,       NULL,       1 << 3,       0,           -1 },
@@ -157,6 +159,7 @@ static Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
+	{ ClkButton,		0,		Button1,	spawn,		{.v = dmenucmd } },
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
