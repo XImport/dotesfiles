@@ -4,6 +4,7 @@
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const char buttonbar[]       = " ";
@@ -57,14 +58,17 @@ static const Rule rules[] = {
 	/* class     			instance    title       tags mask     isfloating   monitor */
 	{ "LibreWolf",  		NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Nitrogen",  			NULL,       NULL,       1 << 7,       1,           -1 },
+	{ "weather",  			NULL,       NULL,       1 << 7,       1,           -1 },
 	{ "Lxappearance",  		NULL,       NULL,       1 << 7,       1,           -1 },
 	{ "Nvidia-settings",  	NULL,       NULL,       1 << 7,       1,           -1 },
 	{ "SimpleScreenRecorder",NULL,       NULL,      1 << 5,       1,           -1 },
 	{ "discord",  	    	NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "qutebrowser",  		NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Brave-browser",  	NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Pcmanfm",  			NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "whatsdesk", NULL,       NULL,       1 << 4,       0,           -1 },
 };
+
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -102,6 +106,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_Down,   setgaps,        {.i = -1 } },
+	{ MODKEY,                       XK_Up,     setgaps,        {.i = +1 } },
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = 0  } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -129,6 +136,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
 /* Mod + Alt Key  */
 
     { MODKEY|Mod1Mask,              XK_f,       spawn,          CMD("alacritty -e ranger") },
