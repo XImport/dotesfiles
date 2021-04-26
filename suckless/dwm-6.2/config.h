@@ -125,12 +125,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 /* Mod + Shift Key */
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+    { MODKEY|ShiftMask,           XK_w,       spawn,          CMD("/home/import/dmenu-scripts/dmenu-wifi.sh") },
     { MODKEY|ShiftMask,           XK_q,       spawn,          CMD("/home/import/dmenu-scripts/dmenu-logout.sh") },
     { MODKEY|ShiftMask,           XK_s,       spawn,          CMD("python3 /home/import/dmenu-scripts/sys-monitor.py") },
     { MODKEY|ShiftMask,           XK_f,       spawn,          CMD("/home/import/dmenu-scripts/dmenu-flatpak.sh") },
     { MODKEY|ShiftMask,           XK_e,       spawn,          CMD("/home/import/dmenu-scripts/dmenuemoji.sh") },
     { MODKEY|ShiftMask,           XK_a,       spawn,          CMD("python3 /home/import/dmenu-scripts/dmenu_appimage.py") },
-    { MODKEY|ShiftMask,           XK_w,       spawn,          CMD("/home/import/Documents/scripts/wallzap") },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
