@@ -38,7 +38,7 @@ static const unsigned int alphas[][3]      = {
 	[SchemeSel]  = { 255,  80, 255   },
 
 	[SchemeStatus]  = { 255,  80, 255   },
-	[SchemeTagsSel]  = { 255,  80, 255   },
+	[SchemeTagsSel]  = { 255,  255, 255   },
 	[SchemeTagsNorm]  = { 255,  80, 255   },
 	[SchemeInfoSel]  = { 255,  80, 255   },
 	[SchemeInfoNorm]  = { 255,  80, 255   },
@@ -96,7 +96,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run",  NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
