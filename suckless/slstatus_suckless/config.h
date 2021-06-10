@@ -65,11 +65,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ wifi_essid, "  %s ", "wlxd037457f560e" },
-    	{ wifi_perc, "%3s%%", "wlxd037457f560e" },
+	{ wifi_essid, "  %s ", "wlp0s26f7u2" },
+    	{ wifi_perc, "%3s%%", "wlp0s26f7u2" },
     	/* { cpu_perc, "[ CPU %3s%%]", NULL    }, */
-    	/* { ram_perc, " |  RAM %2s%%", NULL    }, */
+    	{ ram_perc, " |  RAM %2s%%  ", NULL    },
     	/* { swap_perc, "[ SWAP %2s%%]", NULL    }, */
-    { run_command, "  墳 %s%% ", "/bin/sh -c \"amixer get Master | tail -n1 | grep -Po '\\[\\K[^%]*' | head -n1\"" },
+    { run_command, "  墳 %s%% ", "/bin/sh -c \"amixer get Master | tail -n1 | grep -Po '\\[\\K[^%]*' | head -n1\"   " },
 	{ datetime, "  %s",           "%F %T" },
 };
