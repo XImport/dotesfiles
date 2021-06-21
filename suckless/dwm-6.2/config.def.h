@@ -122,7 +122,7 @@ static Key keys[] = {
 /* Mod + Shift Key */
         { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
         { MODKEY|ShiftMask,             XK_w,       spawn,          CMD("/home/import/dmenu-scripts/dmenu-wifi.sh") },
-        { MODKEY|ShiftMask,             XK_q,       spawn,          CMD("/home/import/dmenu-scripts/dmenu-logout.sh") },
+        { MODKEY|ShiftMask,             XK_q,       spawn,          CMD("python3 /home/import/dmenu-scripts/dmenu-logout.py") },
         { MODKEY|ShiftMask,             XK_s,       spawn,          CMD("python3 /home/import/dmenu-scripts/sys-monitor.py") },
         { MODKEY|ShiftMask,             XK_f,       spawn,          CMD("/home/import/dmenu-scripts/dmenu-flatpak.sh") },
         { MODKEY|ShiftMask,             XK_e,       spawn,          CMD("/home/import/dmenu-scripts/dmenuemoji.sh") },
