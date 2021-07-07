@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+
+body {
+  background-image: url("../imgs/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 2000px;
+}
+
+.form-search {
+  text-align: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+h1 {
+  font-family: "Bangers", cursive;
+  font-size: 70px;
+  color: #ff79c6;
+}
+
+h3 {
+  font-family: "Yusei Magic", sans-serif;
+  font-size: 30px;
+  color: #bd93f9;
+}
+
+.search-input {
+  width: 30%;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  color: #ff79c6;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+  border-bottom: 1px solid white;
+}
+
+.search-input:focus {
+  width: 35%;
+  border-bottom: 1px solid #6272a4;
+}
+
+button {
+  margin-top: 20px;
+  width: 8%;
+  padding: 8px;
+  border-radius: 12px;
+  font-family: "Yusei Magic", sans-serif;
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+  background-color: rgb(29, 28, 33, 0.5);
+  border: 1px solid rgb(29, 28, 33, 0.5);
+  transition: all 0.3s ease-in;
+}
+
+button:hover {
+  background-color: #50fa7b;
+  color: black;
+}
