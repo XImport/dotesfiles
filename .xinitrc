@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+if [ -f "/usr/bin/dpass" ] ; then
+	export SUDO_ASKPASS="/usr/bin/dpass"
+fi
+
+# these conflict with tabbed so disable for now
+#xmodmap -e "remove mod4 = Super_L"
+#xmodmap -e "add mod1 = Super_L"
+
+
+#Stratup
+barrier &
+slstatus &
+nitrogen --restore &
+compton --config /home/import/.config/compton/compton.conf &
+nmcli radio wifi on &
+# PC dependant
+# xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+while :; do
+	        ssh-agent dwm
+done
+
+exec dwm 
+
+# exec gnome-session
+# exec startkde
+# exec startxfce4
+# ...or the Window Manager of your choice
