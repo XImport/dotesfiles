@@ -1,3 +1,4 @@
+
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -44,6 +45,7 @@ static const Rule rules[] = {
 	{ "LibreWolf",                  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "whatsdesk",                  NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "DesktopEditors",             NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "Gpick",                      NULL,       NULL,       1 << 7,       1,           -1 },
 };
 
 /* layout(s) */
@@ -129,6 +131,11 @@ static Key keys[] = {
         { MODKEY|Mod1Mask,              XK_b,       spawn,          CMD("librewolf") },
         { MODKEY|Mod1Mask,              XK_q,       spawn,          CMD("calc") },
         { MODKEY|Mod1Mask,              XK_d,       spawn,          CMD("python /home/import/dmenu-scripts/dwm.py") },
+
+/* ALT SWICTHER KEY */
+        { Mod1Mask,              XK_Tab,       spawn,          CMD("/home/import/dmenu-scripts/dswitcher") },
+
+
         TAGKEYS(                        XK_1,                      0)
 	        TAGKEYS(                        XK_2,                      1)
 	        TAGKEYS(                        XK_3,                      2)
