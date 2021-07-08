@@ -62,3 +62,18 @@ button:hover {
   background-color: #50fa7b;
   color: black;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+  .search-input , button{
+    width: 80%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .search-input:focus {
+    width: 100%;
+  }
+}
