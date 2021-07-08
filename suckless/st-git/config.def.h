@@ -8,7 +8,8 @@
 static char *font = "Comic Mono:pixelsize=14:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", 
+	"Mononoki Nerd Font:pixelsize=14:antialias=true:autohint=true", 
+	"JoyPixels:pixelsize=12:antialias=true:autohint=true", 
 	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true",
 };
 
