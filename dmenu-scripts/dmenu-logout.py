@@ -27,7 +27,7 @@ class Main:
     def poweroff(self):
         confirme = dmenu.show(self.choices, prompt="Choose ?", lines=2)
         if confirme == self.choices[1]:
-            os.system("poweroff")
+            os.system("systemctl poweroff")
 
     def hibernate(self):
         confirme = dmenu.show(self.choices, prompt="Choose ?", lines=2)
