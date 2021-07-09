@@ -131,6 +131,7 @@ static Key keys[] = {
         { MODKEY|Mod1Mask,              XK_b,       spawn,          CMD("librewolf") },
         { MODKEY|Mod1Mask,              XK_q,       spawn,          CMD("calc") },
         { MODKEY|Mod1Mask,              XK_d,       spawn,          CMD("python /home/import/dmenu-scripts/dwm.py") },
+        { MODKEY|Mod1Mask,              XK_p,       spawn,          CMD("/home/import/dmenu-scripts/dprocess.sh") },
 
 /* ALT SWICTHER KEY */
         { Mod1Mask,              XK_Tab,       spawn,          CMD("/home/import/dmenu-scripts/dswitcher") },
