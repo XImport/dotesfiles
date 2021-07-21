@@ -5,6 +5,7 @@ source ~/.zprofile
 alias f="fzf | xargs nvim"
 # vim and emacs
 alias vim="nvim"
+alias v="lvim"
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
 alias doomsync="~/.emacs.d/bin/doom sync"
@@ -90,6 +91,8 @@ alias jctl="journalctl -p 3 -xb"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export EDITOR="nvim"              # $EDITOR use neovim in terminal
+export PATH="/home/import/.cargo/bin:$PATH"
+ # export PATH="/home/import/.cargo/bin" 
 
 # bindkey  "^P" 'fzf | xargs -ro nvim ^M'
 
@@ -102,7 +105,7 @@ export EDITOR="nvim"              # $EDITOR use neovim in terminal
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
-stty stop undef		# Disable ctrl-s to freeze terminal.
+# stty stop undef		# Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
 
 # beeping is annoying
@@ -175,12 +178,30 @@ function precmd {
 
 autoload -Uz compinit promptinit edit-command-line colors vcs_info
 autoload -Uz vcs_info
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=magenta,bold,underline"
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=magenta,bold,underline"
 
 zstyle ':completion:*' menu select
 zstyle ':vcs_info:git:*' formats '  %b '
 setopt PROMPT_SUBST
-#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # case-insensitive matching
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # case-insensitive matching
 
-zmodload zsh/complist
-PROMPT='%B%F{cyan}${vcs_info_msg_0_}%F{red}%1~%F{white} %# %f%b'
+#zmodload zsh/complist
+# PROMPT='%B%F{cyan}${vcs_info_msg_0_}%F{red}%1~%F{white} %# %f%b'
+
+
+
+
+
+
+
+
+
+# ZSH-specific adapter
+robbyrussell_zsh_adapter() {
+  robbyrussell_previous_exit_code="$?"
+  /usr/bin/robbyrussell $robbyrussell_previous_exit_code 'zsh'
+}
+
+
+# set prompt
+PROMPT='$(robbyrussell_zsh_adapter)'
